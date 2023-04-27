@@ -1,3 +1,8 @@
+function onHover(event) {
+    event.target.style.backgroundColor = 'black';
+}
+
+
 let container = document.querySelector('#container');
 let rows = [];
 for (let i = 0; i < 16; i++) {
@@ -7,6 +12,7 @@ for (let i = 0; i < 16; i++) {
     for (let j = 0; j < 16; j++) {
         const gridSquare = document.createElement('div');
         gridSquare.setAttribute('class', 'grid');
+        gridSquare.addEventListener('mouseover', (e) => onHover(e));
         row.push(gridSquare);
         flexRow.appendChild(gridSquare);
     }

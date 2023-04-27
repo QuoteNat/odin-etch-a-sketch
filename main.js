@@ -25,8 +25,17 @@ function generateGrid(dimensions) {
 }
 
 function resetGrid() {
-    let dimensions = Number(prompt('How many squares should there be for side?'));
-
+    let goodInput = false;
+    let dimensions = 0;
+    do {
+        dimensions = Number(prompt('How many squares should there be for side?'));
+        if (isNaN(dimensions) || dimensions > 100 || dimensions < 2) {
+            goodInput = false;
+        } else {
+            goodInput = true;
+        }
+    } while (!goodInput);
+    console.log(dimensions);
     generateGrid(dimensions);
 }
 

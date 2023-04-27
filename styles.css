@@ -19,6 +19,7 @@ body, html {
     border-style: solid;
     border-color: black;
     border-width: 1px;
+    margin: -1px;
     background-color: white;
     flex-grow: 1;
     width: 10px;

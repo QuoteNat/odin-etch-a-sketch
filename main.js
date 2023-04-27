@@ -35,7 +35,6 @@ function resetGrid() {
             goodInput = true;
         }
     } while (!goodInput);
-    console.log(dimensions);
     generateGrid(dimensions);
 }
 

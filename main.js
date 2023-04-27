@@ -4,19 +4,22 @@ function onHover(event) {
 
 function generateGrid(dimensions) {
     let container = document.querySelector('#container');
-    let rows = [];
+
+    while (container.hasChildNodes()) {
+        container.removeChild(container.childNodes[0]);
+    }
+    
     for (let i = 0; i < dimensions; i++) {
-        let row = [];
         const flexRow = document.createElement('div');
         flexRow.setAttribute('class', 'row');
+
         for (let j = 0; j < dimensions; j++) {
             const gridSquare = document.createElement('div');
             gridSquare.setAttribute('class', 'grid');
             gridSquare.addEventListener('mouseover', (e) => onHover(e));
-            row.push(gridSquare);
             flexRow.appendChild(gridSquare);
         }
-        rows.push(row);
+        
         container.appendChild(flexRow);
     }    
 }
